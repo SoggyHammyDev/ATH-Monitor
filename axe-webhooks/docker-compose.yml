@@ -7,7 +7,7 @@ services:
       - web
 
   web:
-    image: ghcr.io/akacurtis/axe-webhooks-web:latest
+    image: ghcr.io/SoggyHammyDev/axe-webhooks-web:latest
     init: true
     restart: always
     stop_grace_period: 1m
