@@ -3,7 +3,7 @@ manifestVersion: 1
 id: axe-webhooks
 name: ATH Monitor
 tagline: Worker ATH Discord alerts
-icon: https://raw.githubusercontent.com/AkaCurtis/Axe-Webhooks/main/axe-webhooks/ATH-logo.png
+icon: https://raw.githubusercontent.com/SoggyHammyDev/ATH-Monitor/main/axe-webhooks/ATH-logo.png
 category: Development
 version: "1.0.5"
 port: 3456
@@ -35,8 +35,8 @@ description: >-
   - Auto-detection of Umbrel IP address
 
 developer: Curtis
-repo: https://github.com/AkaCurtis/Axe-Webhooks
-support: https://github.com/AkaCurtis/Axe-Webhooks/issues
+repo: https://github.com/SoggyHammyDev/ATH-Monitor
+support: https://github.com/SoggyHammyDev/ATH-Monitor/issues
 gallery: []
 releaseNotes: >-
   - Test
