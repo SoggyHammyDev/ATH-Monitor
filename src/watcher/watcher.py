@@ -163,12 +163,20 @@ def shorten_text(text: str, limit: int = 400) -> str:
 
 def summarize_workers(details: list[Dict[str, Any]], limit: int = 5) -> str:
     names = []
+
     for worker in details[:limit]:
-        raw_name = str(worker.get("workername", "")).strip()
+        raw_name = str(
+            worker.get("workername")
+            or worker.get("worker")
+            or ""
+        ).strip()
+
         if raw_name:
             names.append(pretty_worker_name(raw_name))
+
     if not names:
         return "no named workers"
+
     suffix = "" if len(details) <= limit else f" ... +{len(details) - limit} more"
     return ", ".join(names) + suffix
 
@@ -405,7 +413,7 @@ def monitor_chain_algo(chain: str, base_key: str, algo: str):
 
             current_best: Dict[str, int] = {}
             for w in details:
-                raw_name = str(w.get("workername", "")).strip()
+                raw_name = str(w.get("worker", "")).strip()
                 if not raw_name:
                     continue
 
@@ -432,7 +440,7 @@ def monitor_chain_algo(chain: str, base_key: str, algo: str):
             changed = False
 
             for w in details:
-                raw_name = str(w.get("workername", "")).strip()
+                raw_name = str(w.get("worker", "")).strip()
                 if not raw_name:
                     continue
 
